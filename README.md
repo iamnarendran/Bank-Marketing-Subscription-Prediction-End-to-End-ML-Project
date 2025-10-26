@@ -33,7 +33,7 @@ The goal is to help marketing teams **target potential customers efficiently** w
 ```bash
 bank-subscription-project/
 ├── app/
-| ├── Dockerfile # Docker setup
+│ ├── Dockerfile # Docker setup
 │ ├── app.py # FastAPI app for prediction endpoint
 │ ├── lgb_bank_marketing_model.pkl # Trained LightGBM model pipeline
 │ └──  requirements.txt # Dependencies list
