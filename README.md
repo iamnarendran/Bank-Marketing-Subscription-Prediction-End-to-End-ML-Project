@@ -32,13 +32,14 @@ The goal is to help marketing teams **target potential customers efficiently** w
 ## 📂 Folder Structure
 ```bash
 bank-subscription-project/
-│
-├── app.py # FastAPI app for prediction endpoint
-├── model_pipeline.pkl # Trained LightGBM model pipeline
-├── requirements.txt # Dependencies list
-├── Dockerfile # Docker setup (optional)
+├── app/
+| ├── Dockerfile # Docker setup
+│ ├── app.py # FastAPI app for prediction endpoint
+│ ├── lgb_bank_marketing_model.pkl # Trained LightGBM model pipeline
+│ └──  requirements.txt # Dependencies list
 ├── data/
 │ ├── bank-additional-full.csv
+│ ├── bank-additional-names.txt
 │ └── bank-additional.csv
 ├── notebooks/
 │ └── EDA_and_Modeling.ipynb
