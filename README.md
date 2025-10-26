@@ -168,7 +168,7 @@ POST /predict
 ```
 Response:
 
-{"prediction": 1, "probability": 0.76}
+{"prediction": 0, "probability": 0.28}
 
 -----
 ## 🐳 Docker setup
