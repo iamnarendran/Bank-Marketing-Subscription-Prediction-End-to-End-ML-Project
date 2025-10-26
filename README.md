@@ -13,7 +13,7 @@ The goal is to help marketing teams **target potential customers efficiently** w
 - Implement **Threshold Tuning** for better recall on imbalanced data  
 - Provide **Model Explainability** using SHAP visualizations  
 - Deploy a **FastAPI endpoint** to serve predictions  
-- (Optional) Containerize the app with a **Dockerfile** for production readiness
+- Containerize the app with a **Dockerfile** for production readiness
 
 ---
 
@@ -89,7 +89,7 @@ Dataset: [UCI Bank Marketing Dataset](https://archive.ics.uci.edu/ml/datasets/Ba
 ---
 
 ## 🤖 Model Training & Tuning  
-- **LightGBM** gave best validation results:
+- **LightGBM** gave the best validation results:
 - Test Set Evaluation (Threshold = 0.6 ):
 - Accuracy: 0.8729567891244538
 - Precision: 0.4527098831030818
@@ -190,7 +190,7 @@ docker run -p 8000:8000 bank-subscriber-api
 
 - Learned threshold tuning to handle class imbalance
 
-- Practiced explainable AI (SHAP) for model transparency
+- Practised explainable AI (SHAP) for model transparency
 
 - Explored FastAPI deployment for productionization
 
