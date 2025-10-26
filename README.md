@@ -30,6 +30,7 @@ The goal is to help marketing teams **target potential customers efficiently** w
 ---
 
 ## 📂 Folder Structure
+```bash
 bank-subscription-project/
 │
 ├── app.py # FastAPI app for prediction endpoint
@@ -42,7 +43,7 @@ bank-subscription-project/
 ├── notebooks/
 │ └── EDA_and_Modeling.ipynb
 └── README.md
-
+```
 
 ---
 
@@ -85,29 +86,35 @@ Dataset: [UCI Bank Marketing Dataset](https://archive.ics.uci.edu/ml/datasets/Ba
 
 ---
 
-## 🤖 Model Training & Tuning
-- Tried **Logistic Regression (L1/L2)**, **XGBoost**, **CatBoost**, **LightGBM**, **Random Forest**  
+## 🤖 Model Training & Tuning  
 - **LightGBM** gave best validation results:
-Accuracy: 0.9115
-Precision: 0.5941
-Recall: 0.6952
-F1-Score: 0.6407
-AUC: 0.9474
-
+- Test Set Evaluation (Threshold = 0.6 ):
+- Accuracy: 0.8729567891244538
+- Precision: 0.4527098831030818
+- Recall: 0.6120689655172413
+- F1: 0.5204642638973732
+- AUC: 0.8015438523670866
 - Hyperparameter tuning via **RandomizedSearchCV**
 - Optimal threshold determined for best Recall-F1 balance
 
 ---
+## 📈 Business goals based on Threshold
+
+| Goal                                       | Recommended Threshold | Reason                            |
+| ------------------------------------------ | --------------------- | --------------------------------- |
+|**Maximize Recall (find all subscribers)** | 0.40–0.45             | catches ~70% yes clients          |
+| **Balanced F1 (marketing balance)**        | 0.50–0.60             | F1 ≈ 0.49–0.52 → best overall mix |
+| **Maximize Precision (only best leads)**   | 0.70                  | fewer false positives             |
+---
 
 ## 🧮 Final Test Performance
-| Metric | Score |
-|--------|--------|
-| Accuracy | 0.84 |
-| Precision | 0.38 |
-| Recall | 0.66 |
-| F1-Score | 0.49 |
-| AUC | 0.80 |
-| Threshold | 0.5 |
+| **Metric**    | **Score** |
+| --------- | --------- |
+| **Accuracy**  | **0.873** |
+| **Precision** | **0.453** |
+| **Recall**    | **0.612** |
+| **F1**        | **0.520** |
+| **AUC**       | **0.801** |
 
 ---
 
@@ -132,6 +139,7 @@ uvicorn app:app --reload
 ```
 
 ## Sample API request:
+```bash
 
 POST /predict
 
@@ -156,11 +164,22 @@ POST /predict
   "euribor3m": 4.85,
   "nr.employed": 5191.0
 }
-
+```
 Response:
 
 {"prediction": 1, "probability": 0.76}
 
+-----
+## 🐳 Docker setup
+
+1. Build docker image
+```bash
+ docker build -t bank-subscriber-api .
+```
+2. Run container
+```bash
+docker run -p 8000:8000 bank-subscriber-api
+```
 -----
 
 ## Learnings & Key Takeaways
