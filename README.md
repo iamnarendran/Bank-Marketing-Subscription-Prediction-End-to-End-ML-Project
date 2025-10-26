@@ -43,6 +43,7 @@ bank-subscription-project/
 │ └── bank-additional.csv
 ├── notebooks/
 │ └── EDA_and_Modeling.ipynb
+└── LICENSE
 └── README.md
 ```
 
