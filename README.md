@@ -144,27 +144,26 @@ uvicorn app:app --reload
 ```bash
 
 POST /predict
-
 {
-  "age": 45,
-  "job": "technician",
+  "age": 37,
+  "job": "services",
   "marital": "married",
-  "education": "university.degree",
+  "education": "high.school",
   "default": "no",
   "housing": "yes",
   "loan": "no",
-  "contact": "cellular",
+  "contact": "telephone",
   "month": "may",
   "day_of_week": "mon",
-  "campaign": 2,
-  "pdays": -1,
+  "campaign": 1,
+  "pdays": 999,
   "previous": 0,
   "poutcome": "nonexistent",
-  "emp.var.rate": 1.4,
-  "cons.price.idx": 93.2,
-  "cons.conf.idx": -36.4,
-  "euribor3m": 4.85,
-  "nr.employed": 5191.0
+  "emp_var_rate": 1.1,
+  "cons_price_idx": 93.994,
+  "cons_conf_idx": -36.4,
+  "euribor3m": 4.857,
+  "nr_employed": 5191.0
 }
 ```
 Response:
