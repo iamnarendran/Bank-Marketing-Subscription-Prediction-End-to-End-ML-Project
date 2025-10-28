@@ -12,7 +12,7 @@ The goal is to help marketing teams **target potential customers efficiently** w
 - Build a **robust ML model** (LightGBM) with hyperparameter tuning  
 - Implement **Threshold Tuning** for better recall on imbalanced data  
 - Provide **Model Explainability** using SHAP visualizations  
-- Deploy a **FastAPI endpoint** to serve predictions  
+- Deployed **FastAPI endpoint** to serve predictions  
 - Containerize the app with a **Dockerfile** for production readiness
 
 ---
