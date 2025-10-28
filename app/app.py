@@ -52,7 +52,3 @@ def predict(data: BankMarketingInput):
 
     return {"probability": prediction_proba[0], "prediction": prediction}
 
-# To run this FastAPI app in Colab, you would typically use something like uvicorn:
-# !uvicorn main:app --reload --port 8000 &
-# Replace 'main' with the name of your Python file if running outside Colab.
-# In Colab, you might need to expose the port using ngrok or a similar service.
