@@ -34,8 +34,13 @@ class BankMarketingInput(BaseModel):
     euribor3m: float
     nr_employed: float
 
+# the health check
+@app.get("/")
+def health():
+    return {"status": "ok"}
 
-# Define the prediction endpoint
+
+# the prediction endpoint
 @app.post("/predict")
 def predict(data: BankMarketingInput):
     if model_pipeline is None:
